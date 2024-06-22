@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600,700,800, 800i, 900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #131313;
+            color: #fff;
+        }
+
+        .bill-container {
+            background: #232323;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .bill-container h1, .bill-container p {
+            margin-bottom: 20px;
+        }
+
+        .bill-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #111;
+        }
+    </style>
+</head>
+<body>
+    <div class="bill-container">
+        <h1>Bill Details</h1>
+        <p id="amount"></p>
+        <p id="gst"></p>
+        <p id="total"></p>
+        <a href="booking.php">Book</a>
+        <a href="discount.php">Back to Home</a>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                amount: parseFloat(params.get('amount'))
+            };
+        }
+
+        function displayBill() {
+            const { amount } = getQueryParams();
+            const gst = amount * 0.12;
+            const total = amount + gst;
+            
+            document.getElementById('amount').innerText = `Bill Amount: ₹${amount.toFixed(2)}`;
+            document.getElementById('gst').innerText = `GST (12%): ₹${gst.toFixed(2)}`;
+            document.getElementById('total').innerText = `Total Amount: ₹${total.toFixed(2)}`;
+        }
+
+        window.onload = displayBill;
+    </script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src="mixkit-bubbles-of-water-rising-to-the-surface-186-medium.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="L3.png" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-links">
+                    <li class="nav-item"><a class="nav-link" href="index.php">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms1.html">ROOMS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="REVIEW1.php">GALLERY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cancel2.php">STATUS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service1.php">SERVICE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="darjeeling1.php">PLACES </a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact1.php">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </body>
+    </html>  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color:#a74fc0;
+            background-size: cover;
+            background-position: center;
+        /* Adjust the opacity to make the background less visible */
+        }
+
+        .room-container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            
+        }
+       
+
+
+.text-center {
+    text-align: center;
+    font-size: 6em;
+    letter-spacing: 1.5px;
+    padding: 40px;
+    color: rebeccapurple;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, #6a0dad, #b19cd9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.text-center:hover {
+    color: #ffffff;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .text-center {
+        font-size: 5em;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-center {
+        font-size: 4em;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-center {
+        font-size: 3em;
+        padding: 10px;
+    }
+}
+
+
+
+        .room-card {
+            background-color: #eec0fb85;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(142, 129, 129, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .room-card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .room-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #000000;
+            transition: color 0.3s ease;
+        }
+
+        .room-card:hover .room-title {
+            color: rebeccapurple; /* Change to your desired hover color */
+        }
+
+        .room-description {
+            font-size: 1.1em;
+            color: #000000;
+            margin-top: 10px;
+        }
+
+        .room-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer; /* Add cursor pointer to indicate clickable */
+        }
+
+        .room-card:hover .room-image {
+            transform: scale(1.05);
+        }
+
+        /* Modal Styling */
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rebeccapurple; /* Semi-transparent black background */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #000000;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="room-container">
+        <h1 class="text-center ">Our Rooms</h1>
+    
+        <div class="row">
+            <div class="col-md-6">
+                <div class="room-card">
+                    
+                    <img src="fbcc8527.avif" alt="Standard Room" class="room-image" onclick="openModal('fbcc8527.avif')">
+
+                    <a href="booking.php">
+                    <h2 class="room-title">Standard Room</h2></a>
+                    <p class="room-description">Our Standard Room offers a cozy and comfortable environment, ideal for both leisure and business travelers. Enjoy a relaxing stay with all the essentials provided.</p>
+                    <ul class="room-amenities">
+                        <li>Free Wifi</li>
+                        <li>Flat-screen TV</li>
+                        <li>En-suite bathroom</li>
+                        <li>24/7 Room Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="room-card">
+                    
+                        <img src="vvroom1.jpg" alt="Deluxe Room" class="room-image" onclick="openModal('vvroom1.jpg')">
+                        <a href="booking.php">
+                    <h2 class="room-title">Deluxe Room</h2></a>
+                    <p class="room-description">Experience luxury and comfort in our Deluxe Room. Equipped with modern amenities and breathtaking views, it's the perfect choice for a relaxing stay.</p>
+                    <ul class="room-amenities">
+                        <li>Free Wifi</li>
+                        <li>Flat-screen TV</li>
+                        <li>En-suite bathroom</li>
+                        <li>24/7 Room Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="room-card">
+                    
+                        <img src="333825214.jpg" alt="Suite" class="room-image" onclick="openModal('333825214.jpg')">
+                    <a href="booking.php">
+                    <h2 class="room-title">Suite</h2></a>
+                    <p class="room-description">Indulge in ultimate luxury in our opulent suites, offering separate living areas, oversized bathtubs, and private terraces with stunning panoramic views.</p>
+                    <ul class="room-amenities">
+                        <li>Free Wifi</li>
+                        <li>Smart TV</li>
+                        <li>Jacuzzi</li>
+                        <li>24/7 Butler Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="room-card">
+                    
+                        <img src="500036448.jpg" alt="Penthouse" class="room-image" onclick="openModal('500036448.jpg')">
+                        <a href="booking.php">
+                    <h2 class="room-title">Penthouse</h2></a>
+                    <p class="room-description">Elevate your stay with our Penthouse suite, offering unparalleled luxury and sophistication. Enjoy exclusive amenities, stunning views, and personalized service for a truly unforgettable experience.</p>
+                    <ul class="room-amenities">
+                        <li>Free Wifi</li>
+                        <li>Flat-screen TV</li>
+                        <li>En-suite bathroom</li>
+                        <li>24/7 Room Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="room-card">
+                    
+                        <img src="Image.jpg" alt="Villa" class="room-image" onclick="openModal('Image.jpg')"
+                        <a href="booking.php">
+                    <h2 class="room-title">Villa</h2></a>
+                    <p class="room-description">Experience the ultimate in luxury and privacy with our Villa accommodation. Featuring spacious living areas, private pools, and personalized service, our Villas are the perfect retreat for discerning travelers.</p>
+                    <ul class="room-amenities">
+                        <li>Free Wifi</li>
+                        <li>Flat-screen TV</li>
+                        <li>En-suite bathroom</li>
+                        <li>24/7 Room Service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="expandedImage">
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to open the modal and display the clicked image
+        function openModal(imgSrc) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("expandedImage");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+<html>
+<style>
+        
+        /* Navbar styles */
+            
+        .navbar {
+            background-color: transparent; /* Slate gray color for a cool, mountain look */
+            color: #e6e6e6; /* Light gray color for text */
+            
+            font-size: 1.1em;
+            
+        }
+
+        .navbar-brand {
+            font-family: 'Damion', cursive; /* Cursive font for the brand */
+            font-size: 1.1em;
+            font-weight: bold;
+            color: inherit;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Lighter text shadow */
+        }
+
+        .navbar-brand img {
+            max-height: 190px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-left: 70px;
+        }
+
+        .navbar-links li {
+            margin-right: 30px;
+        }
+
+        .navbar-links li:last-child {
+            margin-right: 0;
+        }
+
+        .navbar-links li a {
+            font-family: 'Damion', cursive; /* Cursive font for navbar links */
+            color: black;
+            text-decoration: none;
+            font-size: 1.0em;
+            font-weight: bold;
+            padding: 10px 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-links li a:hover,
+        .navbar-links li a:focus {
+            color: rebeccapurple; /* Light gray color on hover */
+            background-color: rgba(230, 230, 230, 0.2); /* Semi-transparent light gray background on hover */
+        }
+
+        .navbar-links li a:hover::after,
+        .navbar-links li a:focus::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: rebeccapurple; /* Light gray color for underline */
+            border-radius: 2px;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-links li a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-item.dropdown a.dropdown-toggle {
+            color: inherit;
+            font-weight: bold;
+            font-family: 'Damion', cursive;
+        }
+
+        .nav-item.dropdown a.dropdown-toggle:hover,
+        .nav-item.dropdown a.dropdown-toggle:focus {
+            color: #e6e6e6;
+            font-family: 'Damion', cursive;
+        }
+
+        .dropdown-menu {
+            background-color: slategray; /* Dark slate gray background for dropdown menu */
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Lighter shadow */
+            padding: 10px 0;
+        }
+
+        .dropdown-item {
+            color: #ffffff; /* White color for dropdown items */
+            font-weight: bold;
+            font-size: 0.9em;
+            padding: 8px 20px;
+            font-family: 'Damion', cursive;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: rgba(230, 230, 230, 0.2); /* Semi-transparent light gray background on hover */
+            color: #e6e6e6;
+        }
+
+        .dropdown-divider {
+            border-top: 1px solid #e6e6e6; /* Light gray color for divider */
+        }
+
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+    
+    
+        </style>
+    </head>
+  
+    <style>
+        .footer {
+      background-color: #343a40;
+      color: #ffffff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 0px;
+      position: relative;    
+      box-shadow: rgba(0, 0, 0, 0.8);
+  }
+  
+  .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+  
+  .footer-text {
+      flex: 1;
+      text-align: left;
+      margin-right: 20px;
+  }
+  
+  .footer-iframe {
+      flex-shrink: 0;
+      text-align: right;
+  }
+  
+  .footer a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+  }
+  
+  .footer a:hover {
+      text-decoration: underline;
+  }
+  
+  
+          .info-section {
+              background-color: #ffffff;
+              padding: 20px;
+              border-radius: 5px;
+              margin-top: 20px;
+              box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+          }
+  
+  </style>
+  <html>
+  <div class="footer">
+      <div class="footer-content">
+          <div class="footer-text">
+              <p>&copy; 2024 Star-View Hotel. All Rights Reserved.</p>
+              <p>
+                  <a href="#">Privacy Policy</a> |
+                  <a href="#">Terms of Service</a> |
+                  <a href="contact.php">Contact</a>
+              </p>
+              <h2>Follow Us</h2>
+              <p>Stay connected with us on social media:</p>
+              <a href="https://www.facebook.com" target="_blank" class="btn btn-primary">Facebook</a>
+              <a href="https://www.twitter.com" target="_blank" class="btn btn-info">Twitter</a>
+              <a href="https://www.instagram.com" target="_blank" class="btn btn-danger">Instagram</a>
+          </div>
+          <div class="footer-iframe">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.6146815890843!2d88.26370952495186!3d27.042339104508784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e42eea86a85c0b%3A0x2abd29f6dfa41e75!2sDarjeeling%20Mall!5e0!3m2!1sen!2sin!4v1715960810903!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+      </div>
+  </div>
+  
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  </body>
+  </html>
+  <script>
+  
+  </script>
+  
+  
+     
+  </body>
+   
+  </html>

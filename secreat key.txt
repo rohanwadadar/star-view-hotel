@@ -1,0 +1,7 @@
+s key - lO9H2BCwIOJbL5k4MYHqF0cd
+key id - rzp_test_3GbERORHGytDZ5
+
+lO9H2BCwIOJbL5k4MYHqF0cd
+
+
+https://dashboard.razorpay.com/app/payments
